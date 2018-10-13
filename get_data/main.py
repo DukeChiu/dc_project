@@ -1,5 +1,5 @@
 import pymysql
-
+import numpy
 # ------------database config------------------
 user = ''
 pwd = ''
@@ -26,5 +26,5 @@ def get_by_id(list_id):
         name += '`' + i[0] + '`,'
     name = name[:-1]
     sql_line_all = 'select ' + name + 'from all_swm'
-    return query_select_all(sql_line_all)
+    return numpy.array(query_select_all(sql_line_all))
 
