@@ -1,0 +1,4 @@
+To get the get from the database
+you need import the package and use the function 'get_by_id'
+then if the params is a string 'all', you are getting the all properties,
+but if you only want to get a part of the properties, you need pass a list that contains the id of the properties you need
