@@ -3,8 +3,10 @@ import numpy
 # ------------database config------------------
 user = ''
 pwd = ''
-host = 'test'
+host = ''
 database = 'dachuang'
+nav_table = 'data'
+data_table = 'data44'
 
 
 def query_select_all(sql_line):
@@ -17,14 +19,16 @@ def query_select_all(sql_line):
 
 def get_by_id(list_id):
     if type(list_id) == str and list_id is 'all':
-        sql_line_nav = 'select name from nav'
+        sql_line_nav = 'select name from ' + nav_table
     elif type(list_id) == list:
-        sql_line_nav = 'select name from nav where id in ' + str(tuple(list_id))
+        sql_line_nav = 'select name from ' + nav_table + ' where id in (' + str(list_id)[1:-1] + ')'
     results = query_select_all(sql_line_nav)
     name = ''
     for i in results:
         name += '`' + i[0] + '`,'
     name = name[:-1]
-    sql_line_all = 'select ' + name + 'from all_swm'
+    sql_line_all = 'select ' + name + 'from ' + data_table
+    print(sql_line_all)
     return numpy.array(query_select_all(sql_line_all))
 
+print(get_by_id([1]))
