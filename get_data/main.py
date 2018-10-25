@@ -2,7 +2,7 @@ import pymysql
 import numpy
 # ------------database config------------------
 user = ''
-pwd = ''
+pwd = ""
 host = ''
 database = 'dachuang'
 nav_table = 'data'
