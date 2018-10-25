@@ -1,9 +1,9 @@
 import pymysql
 import numpy
 # ------------database config------------------
-user = 'dc_user'
-pwd = '!($(!))!'
-host = '106.14.9.14'
+user = ''
+pwd = ''
+host = ''
 database = 'dachuang'
 nav_table = 'data'
 data_table = 'data44'
@@ -31,4 +31,3 @@ def get_by_id(list_id):
     # print(sql_line_all)
     return numpy.array(query_select_all(sql_line_all))
 
-print(get_by_id([1,2,3,4]))
